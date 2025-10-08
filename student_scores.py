@@ -1,3 +1,4 @@
+# Adding something for git to detect
 name_scores = {
         "Harry": 81,
         "Ron": 78,
