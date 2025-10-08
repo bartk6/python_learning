@@ -10,12 +10,13 @@ def check_guess(guess, answer):
     if guess == answer:
         return "Winner"
 
-    shuffel_answer = random.sample(answer, len(answer))
+    shuffle_answer = random.sample(answer, len(answer))
     clues = []
+
     for i in range(len(guess)):
         if guess[i] == answer[i]:
             clues.append("Fermi")
-        elif guess[i] in shuffel_answer:
+        elif guess[i] in shuffle_answer:
             clues.append("Pico")
     if len(clues) == 0:
         return "Bagels"
@@ -26,6 +27,3 @@ def gameloop():
     print(clues)
 # TODO: create game loop that tracks guesses
 gameloop()
-
-
-
