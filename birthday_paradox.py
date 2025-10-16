@@ -6,23 +6,23 @@ import random
 def main():
     #birthdays = input("How many birthdays shall I generate?")
     birthdays = []
-    for _ in range(int(input("How many birthdays shall I generate? "))):
+    count = int(input("How many birthdays shall I generate? "))
+    count_range = count + 1
+    print(f"Here are {count} birthdays:")
+    for _ in range(count_range):
         birthdays.append(generate_birthday())
-    print(birthdays)
-
-
+    print(sorted(birthdays))
 
 def generate_birthday():
-    date = random.randint(0, 366)
-    #print("test: ", date)
+    date = random.randint(1, 365)
     months = {
-        'january': range(0,32),
+        'january': range(1,32),
         'febuary': range(31,60),
         'march': range(59,91),
         'april': range(90,121),
         'may': range(120,152),
         'june': range(151,182),
-        'july': range(181,212),
+        'july': range(181,213),
         'august': range(212,244),
         'september': range(243,274),
         'october': range(273,305),
@@ -32,9 +32,9 @@ def generate_birthday():
      # print key if value 
     for month, m in months.items():
         if date in range(0,32):
-            return date, month
+            return month, date, date
         elif date in m:
             fixed_date = date - m.start
-            return fixed_date, month
+            return month, fixed_date, date
 
 main()
